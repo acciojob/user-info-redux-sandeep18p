@@ -10,22 +10,23 @@ const App = () => {
   const { name, email } = useSelector(state => state);
   const dispatch = useDispatch();
 
-  return ( 
+  return (
     <div>
-        {/* Do not remove the main div */}
-        <label for="name">Name:</label>
-      <input type="text" id="name" onChange={(e)=>dispatch(updateName(e.target.value))}>
-      </input>
-      <label for="email">Email:</label>
-      <input type="email" id="email" onChange={(e)=>dispatch(updateEmail(e.target.value))}>
-      </input>
+      <h1>User Information</h1>
       <div>
-        Current values in store:
-        <div>Name - {name}</div>
-        <div>Email - {email}</div>
+        <label htmlFor="name">Name</label>
+        <input type="text" onChange={(e) => dispatch(updateName(e.target.value))} />
+        <br />
+        <label htmlFor="name">Email</label>
+        <input type="email" onChange={(e) => dispatch(updateEmail(e.target.value))} />
+      </div>
+      <div className="output">
+        <p>Current value in store:</p>
+        <p>Name - {name}</p>
+        <p>Email - {email}</p>
       </div>
     </div>
-  )
+  );
 }
 
 export default App
